@@ -4,7 +4,7 @@ defmodule Mix.Tasks.Day02.P1 do
   import AdventOfCode.Day02
 
   def run(_args) do
-    input = "inputs/day02/part1"
+    input = "inputs/day02.txt"
 
     File.stream!(input)
     |> Enum.to_list()
