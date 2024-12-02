@@ -1,0 +1,13 @@
+{application,advent_of_code_2024,
+             [{config_mtime,1733122447},
+              {optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger]},
+              {description,"advent_of_code_2024"},
+              {modules,['Elixir.AdventOfCode.Day01',
+                        'Elixir.AdventOfCode.Day02','Elixir.AdventOfCode2024',
+                        'Elixir.Mix.Tasks.Day01.P1',
+                        'Elixir.Mix.Tasks.Day01.P2',
+                        'Elixir.Mix.Tasks.Day02.P1',
+                        'Elixir.Mix.Tasks.Day02.P2']},
+              {registered,[]},
+              {vsn,"0.1.0"}]}.
