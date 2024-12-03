@@ -15,14 +15,9 @@ defmodule AdventOfCode.Day03 do
   end
 
   defp multiply_numbers(numbers) do
-    product =
-      numbers
-      |> Enum.map(&String.to_integer/1)
-      |> Enum.reduce(1, fn val, acc -> val * acc end)
-
-    IO.inspect(product, label: "Product: ")
-
-    product
+    numbers
+    |> Enum.map(&String.to_integer/1)
+    |> Enum.reduce(1, fn val, acc -> val * acc end)
   end
 
   def part2(args) do
@@ -37,11 +32,11 @@ defmodule AdventOfCode.Day03 do
     step_through_lines(rest, enabled)
   end
 
-  defp step_through_lines(["don't()" <> rest_line | rest], enabled) do
+  defp step_through_lines(["don't()" <> rest_line | rest], _enabled) do
     step_through_lines([rest_line] ++ rest, false)
   end
 
-  defp step_through_lines(["do()" <> rest_line | rest], enabled) do
+  defp step_through_lines(["do()" <> rest_line | rest], _enabled) do
     step_through_lines([rest_line] ++ rest, true)
   end
 
@@ -51,8 +46,6 @@ defmodule AdventOfCode.Day03 do
       |> String.split(")", parts: 2)
       |> List.first()
 
-    IO.inspect(possible_numbers, label: "Försöker räkna mul: ")
-
     cond do
       enabled && String.match?(possible_numbers, ~r/^\d*,\d*$/) ->
         possible_numbers
@@ -61,8 +54,6 @@ defmodule AdventOfCode.Day03 do
         |> Kernel.+(step_through_lines([rest_line] ++ rest, enabled))
 
       true ->
-        IO.inspect(possible_numbers, label: "Antingen ej giltiga värden: ")
-        IO.inspect(enabled, label: "Eller ej enabled: ")
         step_through_lines([rest_line] ++ rest, enabled)
     end
   end
