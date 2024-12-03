@@ -4,13 +4,17 @@ defmodule AdventOfCode.Day03Test do
   import AdventOfCode.Day03
 
   @input """
-         asdf\
+         xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))\
          """
          |> String.split("\n")
-         |> Enum.map(&String.trim/1)
+
+  @input2 """
+          xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))\
+          """
+          |> String.split("\n")
 
   test "part1" do
-    expected_result = 123
+    expected_result = 161
 
     result = part1(@input)
 
@@ -18,9 +22,9 @@ defmodule AdventOfCode.Day03Test do
   end
 
   test "part2" do
-    expected_result = 31
+    expected_result = 48
 
-    result = part2(@input)
+    result = part2(@input2)
 
     assert result == expected_result
   end
