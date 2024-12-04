@@ -3,23 +3,27 @@ defmodule AdventOfCode.DayXXTest do
 
   import AdventOfCode.DayXX
 
-  test "part1" do
-    input = [1, 2, 3]
+  @input """
+         hej
+         haj
+         hoj
+         """
+         |> String.split("\n")
 
+  @tag :skip
+  test "part1" do
     expected_result = 123
 
-    result = part1(input)
+    result = part1(@input)
 
     assert result == expected_result
   end
 
   @tag :skip
   test "part2" do
-    input = [1, 2, 3]
-
     expected_result = 123
 
-    result = part2(input)
+    result = part2(@input)
 
     assert result == expected_result
   end
