@@ -3,12 +3,24 @@ defmodule AdventOfCode.Day04Test do
 
   import AdventOfCode.Day04
 
+  @input """
+         MMMSXXMASM
+         MSAMXMSMSA
+         AMXSXMAAMM
+         MSAMASMSMX
+         XMASAMXAMM
+         XXAMMXXAMA
+         SMSMSASXSS
+         SAXAMASAAA
+         MAMMMXMMMM
+         MXMXAXMASX\
+         """
+         |> String.split("\n")
+
   test "part1" do
-    input = [1, 2, 3]
+    expected_result = 18
 
-    expected_result = 123
-
-    result = part1(input)
+    result = part1(@input)
 
     assert result == expected_result
   end
